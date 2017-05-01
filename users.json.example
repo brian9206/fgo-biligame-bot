@@ -1,0 +1,7 @@
+[
+    {
+        "username":     "Biligame User name"
+        "uid":          "Biligame User ID",
+        "accessToken":  "Access token, from https sniffer, use mitmproxy"
+    },
+]

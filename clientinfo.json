@@ -1,0 +1,21 @@
+{
+    "appVersion": "1.14.5",
+    "version": 80,
+    "dateVersion": 80,
+    "dataVersion": 80,
+
+    "userAgent": "Dalvik/2.1.0 (Linux; U; Android 6.0; Android SDK built for x86 Build/MASTER)",
+    "unityVersion": "5.3.3f1",
+
+    "v": "1.0.1",
+    "s": 1,
+    "developmentAuthCode": "aK8mTxBJCwZyxBjNJSKA5xCWL7zKtgZEQNiZmffXUbyQd5aLun",
+    "rksdkid": 1,
+    "rkchannel": 24,
+
+    "os": "Android OS 6.0 / API-23 (MASTER/3079352)",
+    "deviceType": "unknown Android SDK built for x86",
+    "deviceId": "5284047f4ffb4e04824a2fd1d1f0cd62",
+    "mac": "00000000000000E0",
+    "imei": "aaaaa"
+}

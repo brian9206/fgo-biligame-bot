@@ -1,0 +1,20 @@
+{
+  "name": "fgo-biligame-bot",
+  "version": "1.0.0",
+  "description": "Fate/GO Biligame, Android BOT",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "node dist/index.js"
+  },
+  "author": "Brian Choi <brian9206@hotmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^7.0.14",
+    "@types/request-promise-native": "^1.0.3",
+    "typescript": "^2.3.2"
+  },
+  "dependencies": {
+    "request": "^2.81.0",
+    "request-promise-native": "^1.0.3"
+  }
+}
