@@ -35,15 +35,31 @@ async function bootstrap() {
     }
 
     let errors: any[] = await Promise.all(tasks);
+    let errorList: string[] = [];
 
     // display result
     console.log("> Error encountered:");
 
     for (let error of errors) {
         if (error != null) {
-            console.log(JSON.stringify(error, null, 4));
+            let errorStr = JSON.stringify(error, null, 4);
+            errorList.push(errorStr);
+
+            console.log(errorStr);
         }
     }
+
+    // handle error (notification / etc...)
+    if (errorList.length > 0) {
+        try {
+            let errorHandler = require("./ErrorHandler");
+            await errorHandler(errorList);
+        }
+        catch (e) {
+            console.log("> Error could not be handled.");
+        }
+    }
+    
 
     process.exit(0);
 }
