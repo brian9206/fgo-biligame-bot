@@ -1,8 +1,8 @@
 {
-    "appVersion": "1.14.5",
-    "version": 80,
-    "dateVersion": 80,
-    "dataVersion": 80,
+    "appVersion": "1.15.0",
+    "version": 83,
+    "dateVersion": 83,
+    "dataVersion": 83,
 
     "userAgent": "Dalvik/2.1.0 (Linux; U; Android 6.0; Android SDK built for x86 Build/MASTER)",
     "unityVersion": "5.3.3f1",
