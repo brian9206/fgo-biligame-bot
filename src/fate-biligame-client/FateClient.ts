@@ -5,8 +5,8 @@ import * as request from 'request-promise-native';
 import { FateClientInfo } from './FateClientInfo';
 import { randomNumber } from '../Random';
 
-// Decrypted Funny Key
-const DECRYPTED_FUNNY_KEY: string = "B6949765EC73CF001718B5FD507FCD9E";
+// Decrypted Funny Key   Android only 1771
+const DECRYPTED_FUNNY_KEY: string = "F02C093101C3E4F5813E46605842B74A";
 
 export class FateClient {
     private info: FateClientInfo;
@@ -16,8 +16,8 @@ export class FateClient {
     private uid: string;
     private usk: string;
     private dateVer: number;
-
-    constructor(clientInfo: FateClientInfo, server: string = "https://line1.s1.bili.fate.biligame.net") {
+//fix new get server address by :knva 
+    constructor(clientInfo: FateClientInfo, server: string = "https://line1-s1-bili-fate.bilibiligame.net") {
         this.info = clientInfo;
         this.server = server;
         this.resetCache();
@@ -28,7 +28,7 @@ export class FateClient {
         md5.update(DECRYPTED_FUNNY_KEY + usk);
         return md5.digest("hex");
     }
-
+//fix response JSON.prase() -> eval() by:knva
     private async getRequest(url: string, param: any): Promise<any> {
         let options: request.Options = {
             url: this.server + url,
@@ -40,9 +40,8 @@ export class FateClient {
             }
         }
 
-        return JSON.parse(
-            await request(options)
-        );
+        let res =  await request(options);
+        return eval("("+res+")");
     }
 
     private async postRequest(url: string, param: any): Promise<any> {
@@ -130,7 +129,7 @@ export class FateClient {
 
         return response.list[randomNumber(0, response.list.length - 1)].ser;
     }
-
+//fix data  add bundleid:" com.bilibili.fatego" by knva
     public async loginToMemberCenter(user: FateUser): Promise<LoginToMemberCenterResponse> {
         let data = await this.postRequest("/rongame_beta/rgfate/60_member/logintomembercenter.php", {
             deviceid: this.info.deviceId,
@@ -141,6 +140,7 @@ export class FateClient {
             os: this.info.os,
             ptype: this.info.deviceType,
             imei: this.info.imei,
+            bundleid:" com.bilibili.fatego",
             username: user.username,
             type: "token",
             rkuid: user.uid,
@@ -165,7 +165,7 @@ export class FateClient {
 
         return response;
     }
-
+//fix ida to idfa by knva
     public async login(request: LoginToMemberCenterResponse): Promise<LoginResponse> {
         let data = await this.postRequest("/rongame_beta/rgfate/60_1001/login.php", {
             deviceid: this.info.deviceId,
@@ -174,7 +174,7 @@ export class FateClient {
             rgsid: 1001,
             rguid: request.rguid,
             rgusk: request.rgusk,
-            ida: "",
+            idfa: "",
             v: this.info.v,
             mac: "0",
             imei: "",
