@@ -1,10 +1,10 @@
 {
-    "appVersion": "1.15.0",
-    "version": 84,
-    "dateVersion": 84,
-    "dataVersion": 84,
+    "appVersion": "1.17.1",
+    "version": 159,
+    "dateVersion": 159,
+    "dataVersion": 159,
 
-    "userAgent": "Dalvik/2.1.0 (Linux; U; Android 6.0; Android SDK built for x86 Build/MASTER)",
+    "userAgent": "Dalvik/2.1.0 (Linux; U; Android 7.0; HUAWEI NXT-AL10 Build/HUAWEINXT-AL10)",
     "unityVersion": "5.3.3f1",
 
     "v": "1.0.1",
@@ -13,9 +13,9 @@
     "rksdkid": 1,
     "rkchannel": 24,
 
-    "os": "Android OS 6.0 / API-23 (MASTER/3079352)",
-    "deviceType": "unknown Android SDK built for x86",
-    "deviceId": "5284047f4ffb4e04824a2fd1d1f0cd62",
+    "os": "Android OS 7.0 / API-24 (HUAWEINXT-AL10/C00B575)",
+    "deviceType": "HUAWEI HUAWEI NXT-AL10",
+    "deviceId": "d6dc40cc25b8b6e7d7f66a814d2d6a45",
     "mac": "00000000000000E0",
     "imei": "aaaaa"
 }
